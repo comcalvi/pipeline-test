@@ -9,7 +9,7 @@ export class PipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'MyPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('comcalvi/aws-cdk', 'main'),
+        input: CodePipelineSource.gitHub('comcalvi/pipeline-test', 'main'),
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
       })
     });
